@@ -1,0 +1,32 @@
+@import org.webjars.play.WebJarsUtil
+@()(implicit webJarsUtil: WebJarsUtil)
+
+<html>
+  <head>
+    <title>Example of Scala.js + play + vue.js + bulma</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    @Html(webJarsUtil.script("vue.min.js"))
+  </head>
+  <body>
+    <nav class="nav has-shadow" id="top">
+      <div class="container">
+        <div class="nav-left">
+          <p class="nav-item is-5">
+            <strong>Some logo here</strong>
+          </p>
+        </div>
+      </div>
+    </nav>
+    <section class="section">
+      <div id="main" class="container content">
+        <sampler></sampler>
+        <counter></counter>
+        <toggle></toggle>
+        <model></model>
+        <loop></loop>
+        <api></api>
+      </div>
+    </section>
+    @scalajs.html.scripts("client", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+  </body>
+</html>
