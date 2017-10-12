@@ -17,6 +17,7 @@ object App extends JSApp {
           sampler = Simpler.component,
           counter = Counter.component,
           toggle = Toggle.component,
+          toggle_button = ToggleButton.component,
           model = Model.component,
           loop = Loop.component,
           api = Api.component
